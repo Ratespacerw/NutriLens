@@ -1,0 +1,173 @@
+/* client/src/App.css */
+:root {
+  --primary-blue: #2563eb;
+  --bg-dark: #020617;
+  --card-bg: rgba(30, 41, 59, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+}
+
+body {
+  background-color: var(--bg-dark);
+  background-image: radial-gradient(circle at 50% -20%, #1e293b 0%, #020617 80%);
+  color: var(--text-main);
+  font-family: 'Inter', -apple-system, sans-serif;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+/* --- Hero & Logo Section --- */
+.hero-section {
+  margin-bottom: 40px;
+  animation: fadeIn 0.8s ease-out;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  letter-spacing: -2px;
+  margin: 0;
+  background: linear-gradient(to right, #ffffff, #60a5fa);
+  -webkit-background-clip: text;
+  background-clip: text;  
+  -webkit-text-fill-color: transparent;
+}
+
+.brand-logo svg {
+  filter: drop-shadow(0 0 15px rgba(37, 99, 235, 0.5));
+}
+
+/* --- Upload Box --- */
+.upload-box {
+  background: var(--card-bg);
+  border: 2px dashed #334155;
+  border-radius: 24px;
+  padding: 40px;
+  backdrop-filter: blur(12px);
+  transition: all 0.3s ease;
+}
+
+.upload-box:hover {
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 30px rgba(37, 99, 235, 0.1);
+}
+
+.btn-primary {
+  background: var(--primary-blue);
+  color: white;
+  border: none;
+  padding: 16px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 1rem;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-top: 20px;
+}
+
+.btn-primary:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+}
+
+.btn-primary:disabled {
+  background: #1e293b;
+  color: var(--text-muted);
+  cursor: not-allowed;
+}
+
+/* --- Result Dashboard --- */
+.result-card {
+  background: var(--card-bg);
+  padding: 40px;
+  border-radius: 28px;
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(16px);
+  text-align: left;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  animation: slideUp 0.6s ease-out;
+}
+
+.food-title {
+  font-size: 2.2rem;
+  margin: 0 0 5px 0;
+  font-weight: 800;
+}
+
+.calorie-number {
+  font-size: 5rem;
+  font-weight: 900;
+  color: var(--primary-blue);
+  line-height: 1;
+  margin: 15px 0 5px 0;
+}
+
+.data-label {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+/* --- Ingredient Table --- */
+.breakdown-section {
+  margin: 30px 0;
+}
+
+.ingredient-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 0.95rem;
+}
+
+/* --- Macros Grid --- */
+.macros-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.macro-box {
+  background: rgba(15, 23, 42, 0.8);
+  padding: 15px;
+  border-radius: 16px;
+  text-align: center;
+  border: 1px solid var(--glass-border);
+}
+
+.macro-val {
+  font-size: 1.2rem;
+  font-weight: 700;
+  display: block;
+  margin-top: 4px;
+}
+
+.btn-secondary {
+  background: none;
+  border: 1px solid #334155;
+  color: var(--text-muted);
+  padding: 12px;
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 30px;
+  cursor: pointer;
+}
+
+/* Animations */
+@keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes slideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
