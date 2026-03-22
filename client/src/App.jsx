@@ -33,7 +33,12 @@ function App() {
     if (!image) return;
     setLoading(true);
     try {
-      const response = await axios.post('http://localhost:5000/analyze', { image });
+      // It detects if you are home or in the cloud.
+      const API_URL = window.location.hostname === 'localhost' 
+        ? 'http://localhost:5000/api/analyze' 
+        : '/api/analyze';
+
+      const response = await axios.post(API_URL, { image });
       setResult(response.data.result);
     } catch (error) {
       console.error(error);

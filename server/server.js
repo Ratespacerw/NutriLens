@@ -72,7 +72,7 @@ async function testAI() {
 testAI();
 
 // 4. THE ANALYZE ENDPOINT
-app.post('/analyze', async (req, res) => {
+app.post('/api/analyze', async (req, res) => {
     console.log("📥 [Server]: Received image. Performing precision analysis...");
     try {
         const { image } = req.body;
