@@ -106,6 +106,11 @@ app.post('/analyze', async (req, res) => {
     }
 });
 
-app.listen(port, () => {
-    console.log(`🚀 ChefVision Precision Server live on port ${port}`);
-});
+// Export for Vercel
+module.exports = app;
+
+// Only listen if NOT on Vercel
+if (process.env.NODE_ENV !== 'production') {
+    const PORT = process.env.PORT || 5000;
+    app.listen(PORT, () => console.log(`Local server on ${PORT}`));
+}
