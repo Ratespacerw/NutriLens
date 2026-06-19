@@ -51,7 +51,7 @@ const schema = {
 // 3. INITIALIZE MODEL (CRITICAL PART)
 // We use gemini-flash-latest because it was the winner in your diagnostic test
 const model = genAI.getGenerativeModel({ 
-  model: "gemini-flash-latest",
+  model: "gemini-2.5-flash",
   generationConfig: {
     responseMimeType: "application/json",
     responseSchema: schema,
